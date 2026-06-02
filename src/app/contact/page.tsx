@@ -44,11 +44,19 @@ export default function ContactPage() {
     setSending(true);
     setError("");
     try {
-      await new Promise((r) => setTimeout(r, 1200));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to send.");
+      }
       setSent(true);
       setForm({ name: "", email: "", subject: "", message: "" });
-    } catch {
-      setError("Something went wrong. Please email directly.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please email directly.");
     } finally {
       setSending(false);
     }

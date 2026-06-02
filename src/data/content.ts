@@ -16,7 +16,7 @@ export const services: Service[] = [
 export const timeline: TimelineItem[] = [
   {
     year: "2026",
-    title: "DEMS SaaS & Portfolio Expansion",
+    title: "Creative Consultant & Digital Marketing",
     description: "Leading the visual system and enterprise UI/UX direction for DEMS SaaS platform. Expanding digital portfolio and creative campaigns across Rwanda and East Africa.",
   },
   {
