@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "agentation": "^3.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.0",
     "gsap": "^3.12.5",

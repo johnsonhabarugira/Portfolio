@@ -6,7 +6,6 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import LenisProvider from "@/components/ui/LenisProvider";
 import PreloaderWrapper from "@/components/ui/PreloaderWrapper";
-import AgentationWrapper from "@/components/ui/AgentationWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -104,7 +103,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <AgentationWrapper />
         </LenisProvider>
       </body>
     </html>
