@@ -83,7 +83,29 @@ export default function WorkGrid() {
                   >
                     {/* Image */}
                     <div className="relative aspect-[4/3] overflow-hidden bg-[var(--border)]">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--border)] transition-transform duration-700 group-hover:scale-105" />
+                      {project.behanceEmbedUrl ? (
+                        <iframe
+                          src={project.behanceEmbedUrl}
+                          title={`${project.title} Behance preview`}
+                          className="pointer-events-none absolute inset-0 h-full w-full"
+                          allow="clipboard-write"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          loading="lazy"
+                          aria-hidden="true"
+                          tabIndex={-1}
+                        />
+                      ) : project.videoEmbedUrl ? (
+                        <iframe
+                          src={`${project.videoEmbedUrl}&background=1&autoplay=1&muted=1&loop=1`}
+                          title={`${project.title} video preview`}
+                          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-[138%] -translate-x-1/2 -translate-y-1/2 scale-[1.04]"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          aria-hidden="true"
+                          tabIndex={-1}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--border)] transition-transform duration-700 group-hover:scale-105" />
+                      )}
 
                       <span className="absolute left-4 top-4 bg-[var(--background)]/90 px-2.5 py-1 text-[10px] uppercase backdrop-blur-sm">
                         {project.category}

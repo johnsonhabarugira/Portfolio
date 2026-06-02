@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { projects, getProjectBySlug } from "@/data/projects";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -88,14 +89,39 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Cover image */}
       <RevealOnScroll>
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 mb-20">
-          <div className="relative aspect-[16/7] bg-[var(--border)] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] via-[var(--border)] to-[var(--background)]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">
-                Cover Image — {project.title}
-              </span>
+          {project.behanceEmbedUrl ? (
+            <div className="relative aspect-[404/316] overflow-hidden bg-[var(--border)]">
+              <iframe
+                src={project.behanceEmbedUrl}
+                title={`${project.title} Behance project`}
+                className="absolute inset-0 h-full w-full"
+                allow="clipboard-write"
+                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
-          </div>
+          ) : project.videoEmbedUrl ? (
+            <div className="relative aspect-video overflow-hidden bg-[var(--foreground)]">
+              <iframe
+                src={project.videoEmbedUrl}
+                title="Inclusion in Motion | Fitness Point Rwanda Breaking Barriers Through Fitness"
+                className="absolute inset-0 h-full w-full"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <div className="relative aspect-[16/7] bg-[var(--border)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] via-[var(--border)] to-[var(--background)]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">
+                  Cover Image — {project.title}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </RevealOnScroll>
 
@@ -150,24 +176,28 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
 
         {/* Gallery */}
-        <RevealOnScroll>
-          <div className="border-t border-[var(--border)] py-12 mb-12">
-            <span className="block text-xs tracking-[0.25em] uppercase text-[var(--muted)] mb-8">
-              Visual Direction
-            </span>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="relative aspect-[4/3] bg-[var(--border)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--border)] flex items-center justify-center">
-                    <span className="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">
-                      Image {n}
-                    </span>
+        {project.galleryImages.length > 0 && (
+          <RevealOnScroll>
+            <div className="border-t border-[var(--border)] py-12 mb-12">
+              <span className="block text-xs tracking-[0.25em] uppercase text-[var(--muted)] mb-8">
+                Visual Direction
+              </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border)]">
+                {project.galleryImages.map((src, index) => (
+                  <div key={src} className="group relative aspect-[4/5] overflow-hidden bg-[var(--border)]">
+                    <Image
+                      src={src}
+                      alt={`${project.title} visual ${index + 1}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                    />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </RevealOnScroll>
+          </RevealOnScroll>
+        )}
 
         {/* Results */}
         <RevealOnScroll>

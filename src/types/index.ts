@@ -6,6 +6,8 @@ export interface Project {
   category: string;
   disciplines: string[];
   coverImage: string;
+  videoEmbedUrl?: string;
+  behanceEmbedUrl?: string;
   coverColor?: string;
   galleryImages: string[];
   intro: string;
