@@ -14,10 +14,13 @@ const timelineVisuals = [
 export default function TimelineSection() {
   const dragStartRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const maxIndex = timeline.length - 1;
 
   const showChapter = (index: number) => {
-    setActiveIndex(Math.min(maxIndex, Math.max(0, index)));
+    const nextIndex = Math.min(maxIndex, Math.max(0, index));
+    if (nextIndex !== activeIndex) setHasInteracted(true);
+    setActiveIndex(nextIndex);
   };
 
   const startDrag = (clientX: number) => {
@@ -64,6 +67,13 @@ export default function TimelineSection() {
               →
             </button>
           </div>
+
+          {!hasInteracted && (
+            <p className="evolution__swipe-hint" aria-hidden="true">
+              <span>←</span>
+              Swipe for more
+            </p>
+          )}
 
           <div
             className="evolution__stage"
