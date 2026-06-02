@@ -363,8 +363,39 @@ export const projects: Project[] = [
       "Improved the clarity of class communication online",
       "Strengthened the visual presence of The Champions on social media",
     ],
-    nextProject: null,
+    nextProject: "irembopay-user-guide",
     prevProject: "sine-coffee",
+    featured: true,
+  },
+  {
+    title: "IremboPay — User Guide Video",
+    slug: "irembopay-user-guide",
+    year: "Recent",
+    client: "IremboPay",
+    category: "Video Production",
+    role: "Video Content Creator",
+    disciplines: [
+      "User guide video",
+      "Instructional content",
+      "Video production",
+    ],
+    coverImage: "/og-image.jpg",
+    videoEmbedUrl:
+      "https://player.vimeo.com/video/1197728390?badge=0&autopause=0&player_id=0&app_id=58479",
+    galleryImages: [],
+    intro:
+      "Created a clear how-to user guide video for IremboPay, focused on making the payment journey easier to follow.",
+    challenge:
+      "IremboPay needed a simple instructional video that could explain the user journey in an accessible format.",
+    solution:
+      "Produced a focused user guide video that presents the process in a clear, practical sequence.",
+    results: [
+      "Delivered a practical IremboPay user guide video",
+      "Presented the payment journey in a clear instructional format",
+      "Created accessible video content for users",
+    ],
+    nextProject: null,
+    prevProject: "the-champions",
     featured: true,
   },
 ];

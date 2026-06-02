@@ -105,7 +105,7 @@ export default async function CaseStudyPage({ params }: Props) {
             <div className="relative aspect-video overflow-hidden bg-[var(--foreground)]">
               <iframe
                 src={project.videoEmbedUrl}
-                title="Inclusion in Motion | Fitness Point Rwanda Breaking Barriers Through Fitness"
+                title={`${project.title} video`}
                 className="absolute inset-0 h-full w-full"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
