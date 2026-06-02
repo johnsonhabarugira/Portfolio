@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import MarqueeStrip from "@/components/sections/MarqueeStrip";
@@ -56,7 +57,35 @@ export default function WorkPage() {
 
                     {/* Thumbnail */}
                     <div className="relative w-20 h-14 bg-[var(--border)] overflow-hidden shrink-0 hidden md:block">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--border)]" />
+                      {project.behanceEmbedUrl ? (
+                        <iframe
+                          src={project.behanceEmbedUrl}
+                          title={`${project.title} Behance preview`}
+                          className="pointer-events-none absolute inset-0 h-full w-full grayscale transition-all duration-500 group-hover:grayscale-0"
+                          allow="clipboard-write"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          loading="lazy"
+                          aria-hidden="true"
+                          tabIndex={-1}
+                        />
+                      ) : project.videoEmbedUrl ? (
+                        <iframe
+                          src={`${project.videoEmbedUrl}&background=1&autoplay=1&muted=1&loop=1`}
+                          title={`${project.title} video preview`}
+                          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-[138%] -translate-x-1/2 -translate-y-1/2 grayscale transition-all duration-500 group-hover:grayscale-0"
+                          allow="autoplay; fullscreen; picture-in-picture"
+                          aria-hidden="true"
+                          tabIndex={-1}
+                        />
+                      ) : (
+                        <Image
+                          src={project.coverImage}
+                          alt=""
+                          fill
+                          sizes="80px"
+                          className="object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                        />
+                      )}
                     </div>
 
                     {/* Info */}
