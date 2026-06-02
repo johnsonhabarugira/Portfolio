@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { getFeaturedProjects } from "@/data/projects";
 import { useEffect, useRef } from "react";
@@ -102,6 +103,14 @@ export default function WorkGrid() {
                           allow="autoplay; fullscreen; picture-in-picture"
                           aria-hidden="true"
                           tabIndex={-1}
+                        />
+                      ) : project.coverImage.startsWith("/images/fp/") ? (
+                        <Image
+                          src={project.coverImage}
+                          alt=""
+                          fill
+                          sizes="(max-width: 768px) 78vw, 26rem"
+                          className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
                         />
                       ) : (
                         <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-soft)] to-[var(--border)] transition-transform duration-700 group-hover:scale-105" />
