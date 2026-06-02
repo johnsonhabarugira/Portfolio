@@ -1,7 +1,8 @@
 const SOCIALS = [
   { label: "Behance", href: "https://behance.net/habarugjohnson" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/habarugirajohnson" },
-  { label: "Instagram", href: "https://instagram.com/habarugirajohnson" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/habarugira-johnson" },
+  { label: "Instagram", href: "https://www.instagram.com/johnson.haba/" },
+  { label: "Vimeo", href: "https://vimeo.com/user224099636" },
 ];
 
 export default function Footer() {

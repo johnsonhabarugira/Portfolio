@@ -66,11 +66,13 @@ const jsonLd = {
   jobTitle: "Digital Marketing Specialist & Multidisciplinary Creative",
   url: "https://habarugirajohnson.com",
   email: "habarugirajohnson@gmail.com",
+  telephone: "+250785232415",
   address: { "@type": "PostalAddress", addressLocality: "Kigali", addressCountry: "RW" },
   sameAs: [
     "https://behance.net/habarugjohnson",
-    "https://linkedin.com/in/habarugirajohnson",
-    "https://instagram.com/habarugirajohnson",
+    "https://www.linkedin.com/in/habarugira-johnson",
+    "https://www.instagram.com/johnson.haba/",
+    "https://vimeo.com/user224099636",
   ],
   knowsAbout: [
     "Digital Marketing",

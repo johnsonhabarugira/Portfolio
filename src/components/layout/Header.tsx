@@ -182,6 +182,12 @@ export default function Header() {
           >
             habarugirajohnson@gmail.com
           </a>
+          <a
+            href="tel:+250785232415"
+            className="text-sm font-semibold text-[var(--foreground)] transition-opacity hover:opacity-60"
+          >
+            +250785232415
+          </a>
         </div>
       </div>
     </>

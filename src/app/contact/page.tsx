@@ -5,12 +5,14 @@ import Toast from "@/components/ui/Toast";
 
 const SOCIALS = [
   { label: "Behance", href: "https://behance.net/habarugjohnson" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/habarugirajohnson" },
-  { label: "Instagram", href: "https://instagram.com/habarugirajohnson" },
-  { label: "WhatsApp", href: "https://wa.me/250788000000" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/habarugira-johnson" },
+  { label: "Instagram", href: "https://www.instagram.com/johnson.haba/" },
+  { label: "Vimeo", href: "https://vimeo.com/user224099636" },
+  { label: "WhatsApp", href: "https://wa.me/250785232415" },
 ];
 
 const EMAIL = "habarugirajohnson@gmail.com";
+const PHONE = "+250785232415";
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
@@ -99,6 +101,21 @@ export default function ContactPage() {
                     {copied ? "Copied ✓" : "Copy"}
                   </button>
                 </div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Phone */}
+            <RevealOnScroll>
+              <div className="border-t border-[var(--border)] pt-10">
+                <span className="block text-xs tracking-[0.25em] uppercase text-[var(--muted)] mb-4">
+                  Phone
+                </span>
+                <a
+                  href={`tel:${PHONE}`}
+                  className="text-xl font-medium hover:text-[var(--accent)] transition-colors"
+                >
+                  {PHONE}
+                </a>
               </div>
             </RevealOnScroll>
 
