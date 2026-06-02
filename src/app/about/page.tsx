@@ -4,6 +4,8 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import MarqueeStrip from "@/components/sections/MarqueeStrip";
 import ContactCTA from "@/components/sections/ContactCTA";
 import TimelineSection from "@/components/sections/TimelineSection";
+import ServicesSection from "@/components/sections/ServicesSection";
+import CertificationsSection from "@/components/sections/CertificationsSection";
 
 export const metadata: Metadata = {
   title: "About",
@@ -93,6 +95,7 @@ export default function AboutPage() {
       </section>
 
       <MarqueeStrip />
+      <ServicesSection />
 
       {/* Background */}
       <section className="py-24 md:py-32 bg-[var(--background)]">
@@ -202,6 +205,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CertificationsSection />
       <TimelineSection />
       <ContactCTA />
     </>
