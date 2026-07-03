@@ -91,17 +91,19 @@ export const projects: Project[] = [
       "Branding",
     ],
     coverImage: "/images/fp/knowless.jpg",
+    videoEmbedUrl:
+      "https://player.vimeo.com/video/1206707252?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
     galleryImages: ["/images/fp/knowless.jpg"],
     intro:
-      "Collaborated with acclaimed Rwandan artist Butera Knowless to create visual content and branded assets supporting music releases and digital campaigns.",
+      "Collaborated with acclaimed Rwandan artist Butera Knowless to create visual content and branded assets for Action College's advertisement campaigns.",
     challenge:
       "The project required visual content that elevated the artist's brand while feeling authentic to Rwandan culture and contemporary African creative energy.",
     solution:
-      "Designed a suite of release graphics, event visuals, and social media templates that merged bold typography with cinematic photography.",
+      "Designed a suite of campaign graphics, event visuals, and social media templates that merged bold typography with cinematic photography.",
     results: [
-      "Delivered consistent visual identity across release campaigns",
+      "Delivered consistent visual identity across the ad campaign",
       "Content achieved strong organic engagement on social platforms",
-      "Established repeatable design system for future releases",
+      "Established repeatable design system for future campaigns",
     ],
     nextProject: "gag-rebrand",
     prevProject: "fitness-point-rwanda",
